@@ -4,7 +4,9 @@ import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { gameStore } from "./store";
 
-const GameLazy = dynamic(() => import("./game").then((mod) => mod.Game));
+const GameLazy = dynamic(() => import("./game").then((mod) => mod.Game), {loading(loadingProps) {
+    return <span>loading</span>
+},});
 
 interface Props {
     game: {id: number};
@@ -22,6 +24,7 @@ export function Wrapper({ game }: Props) {
 
     useEffect(() => {
         gameStore.getState().setGame(game.id)
+        console.log("sss") // change this and you'll crash
     }, [game])
 
     return isGameVisible ? (

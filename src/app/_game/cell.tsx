@@ -1,6 +1,6 @@
 "use client";
 
-import { Graphics } from "pixi.js";
+import type { Graphics } from "pixi.js";
 import { memo, useCallback } from "react";
 import { useCalculateCoordinates } from "./use-calc";
 import { CELL_SIZE, GRID_SIZE } from "./lib";

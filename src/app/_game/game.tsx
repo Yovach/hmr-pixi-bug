@@ -1,7 +1,7 @@
 "use client";
 
 import { Application, extend } from "@pixi/react";
-import { Container, EventSystemFeatures, Graphics, Sprite } from "pixi.js";
+import { Container, type EventSystemFeatures, Graphics, Sprite } from "pixi.js";
 
 import { Cell } from "./cell";
 import { useCallback, useEffect, useState } from "react";
@@ -46,11 +46,11 @@ export function Game() {
     const interval = window.setInterval(() => {
       setBunnies(generateBunnies());
     }, 1_000);
+    console.log("ici", { gameId })
 
     return () => clearInterval(interval);
-  }, []);
+  }, [gameId]);
 
-  console.log({gameId})
 
   return (
     <Application

@@ -1,3 +1,5 @@
+"use client";
+
 import { randomIntegerBetween } from "@std/random";
 import { memo, useCallback } from "react";
 import { CELL_SIZE, GRID_SIZE } from "./lib";

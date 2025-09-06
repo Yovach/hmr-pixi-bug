@@ -1,4 +1,6 @@
-import { Graphics } from "pixi.js";
+"use client";
+
+import type { Graphics } from "pixi.js";
 import { memo, useCallback } from "react";
 
 interface Props {

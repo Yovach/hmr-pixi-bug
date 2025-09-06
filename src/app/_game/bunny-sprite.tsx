@@ -6,12 +6,12 @@ type Props = {
   x: number;
   y: number;
 };
+
 export function BunnySprite({ x, y }: Props) {
   // The Pixi.js `Sprite`
   const spriteRef = useRef(null);
 
   const [texture, setTexture] = useState(Texture.EMPTY);
-  const [isHovered, setIsHover] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
   // Preload the sprite if it hasn't been loaded yet
@@ -29,8 +29,6 @@ export function BunnySprite({ x, y }: Props) {
       anchor={0.5}
       eventMode={"static"}
       onClick={() => setIsActive((curr) => !curr)}
-      onPointerOver={() => setIsHover(true)}
-      onPointerOut={() => setIsHover(false)}
       scale={isActive ? 1 : 1.5}
       texture={texture}
       x={x}

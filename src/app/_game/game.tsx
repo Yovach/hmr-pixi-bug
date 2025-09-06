@@ -16,7 +16,7 @@ extend({
   Sprite,
 });
 
-const circles = Array.from({ length: 100 }).fill(undefined);
+const circles = Array.from({ length: GRID_SIZE ** 2 }).fill(undefined);
 
 function generateBunnies(): number[] {
   return new Array<number>(15).fill(0);
@@ -47,8 +47,6 @@ export function Game() {
   }, []);
 
   return (
-    // We'll wrap our components with an <Application> component to provide
-    // the Pixi.js Application context
     <Application
       backgroundAlpha={0}
       height={GRID_SIZE * CELL_SIZE}

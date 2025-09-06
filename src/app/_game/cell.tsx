@@ -1,7 +1,7 @@
 "use client";
 
 import { Graphics } from "pixi.js";
-import { useCallback } from "react";
+import { memo, useCallback } from "react";
 import { useCalculateCoordinates } from "./use-calc";
 import { CELL_SIZE, GRID_SIZE } from "./lib";
 
@@ -11,7 +11,7 @@ interface Props {
   onHover?: (cellId: number) => void;
   hoverred: boolean;
 }
-export function Cell({ size, id, onHover, hoverred }: Props) {
+export const Cell = memo(function Cell({ size, id, onHover, hoverred }: Props) {
   const { calcX, calcY } = useCalculateCoordinates(GRID_SIZE, CELL_SIZE);
   const drawRect = useCallback(
     (g: Graphics) => {
@@ -43,4 +43,4 @@ export function Cell({ size, id, onHover, hoverred }: Props) {
       <pixiGraphics draw={drawRound} width={size} height={size} />
     </pixiContainer>
   );
-}
+});

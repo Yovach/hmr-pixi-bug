@@ -11,6 +11,9 @@ importers:
       '@pixi/react':
         specifier: ^8.0.3
         version: 8.0.3(@types/react@19.1.12)(pixi.js@8.13.1)(react@19.1.0)
+      '@std/random':
+        specifier: npm:@jsr/std__random@^0.1.2
+        version: '@jsr/std__random@0.1.2'
       next:
         specifier: 15.5.2
         version: 15.5.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -193,6 +196,9 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.30':
     resolution: {integrity: sha512-GQ7Nw5G2lTu/BtHTKfXhKHok2WGetd4XYcVKGx00SjAk8GMwgJM3zr6zORiPGuOE+/vkc90KtTosSSvaCjKb2Q==}
+
+  '@jsr/std__random@0.1.2':
+    resolution: {integrity: sha512-9JEVf+3B9xIBQQykmIHPYpJoKCPQyIL1686TDJ/2sGxKca4w1WwSR+Ai/FgeNQlBtnSszYZ3U6VcAeRZhPQzPg==, tarball: https://npm.jsr.io/~/11/@jsr/std__random/0.1.2.tgz}
 
   '@next/env@15.5.2':
     resolution: {integrity: sha512-Qe06ew4zt12LeO6N7j8/nULSOe3fMXE4dM6xgpBQNvdzyK1sv5y4oAP3bq4LamrvGCZtmRYnW8URFCeX5nFgGg==}
@@ -759,6 +765,8 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@jsr/std__random@0.1.2': {}
 
   '@next/env@15.5.2': {}
 

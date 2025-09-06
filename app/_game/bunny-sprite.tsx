@@ -2,7 +2,11 @@
 import { Assets, Texture } from "pixi.js";
 import { useEffect, useRef, useState } from "react";
 
-export function BunnySprite() {
+type Props = {
+  x: number;
+  y: number;
+};
+export function BunnySprite({ x, y }: Props) {
   // The Pixi.js `Sprite`
   const spriteRef = useRef(null);
 
@@ -29,8 +33,8 @@ export function BunnySprite() {
       onPointerOut={() => setIsHover(false)}
       scale={isActive ? 1 : 1.5}
       texture={texture}
-      x={100}
-      y={100}
+      x={x}
+      y={y}
     />
   );
 }

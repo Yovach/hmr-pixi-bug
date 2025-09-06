@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@pixi/react": "^8.0.3",
+    "@std/random": "npm:@jsr/std__random@^0.1.2",
     "next": "15.5.2",
     "pixi.js": "^8.13.1",
     "react": "19.1.0",

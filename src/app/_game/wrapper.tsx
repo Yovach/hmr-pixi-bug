@@ -4,33 +4,35 @@ import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { gameStore } from "./store";
 
-const GameLazy = dynamic(() => import("./game").then((mod) => mod.Game), {loading(loadingProps) {
-    return <span>loading</span>
-},});
+const GameLazy = dynamic(() => import("./game").then((mod) => mod.Game), {
+  loading() {
+    return <span>loading</span>;
+  },
+});
 
 interface Props {
-    game: {id: number};
+  game: { id: number };
 }
 
 export function Wrapper({ game }: Props) {
-    const [isGameVisible, setIsGameVisible] = useState(false);
-    useEffect(() => {
-        const timeout = setTimeout(() => setIsGameVisible(true), 1000);
-        return () => {
-            clearTimeout(timeout);
-            setIsGameVisible(false);
-        }
-    }, []);
+  const [isGameVisible, setIsGameVisible] = useState(false);
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsGameVisible(true), 1000);
+    return () => {
+      clearTimeout(timeout);
+      setIsGameVisible(false);
+    };
+  }, []);
 
-    useEffect(() => {
-        gameStore.getState().setGame(game.id)
-        console.log("sss") // change this and you'll crash
-    }, [game])
+  useEffect(() => {
+    gameStore.getState().setGame(game.id);
+    console.log("sss"); // change this and you'll crash
+  }, [game]);
 
-    return isGameVisible ? (
-        <>
-            <span>{JSON.stringify(game)}</span>
-            <GameLazy />
-        </>
-    ) : null;
+  return isGameVisible ? (
+    <>
+      <span>{JSON.stringify(game)}</span>
+      <GameLazy />
+    </>
+  ) : null;
 }

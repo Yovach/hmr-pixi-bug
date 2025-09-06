@@ -40,17 +40,16 @@ export function Game() {
     setHoverredCell(cellId);
   }, []);
 
-  const gameId = useStore(gameStore, (s) => s.gameId)
+  const gameId = useStore(gameStore, (s) => s.gameId);
 
   useEffect(() => {
     const interval = window.setInterval(() => {
       setBunnies(generateBunnies());
     }, 1_000);
-    console.log("ici", { gameId })
+    console.log("ici", { gameId });
 
     return () => clearInterval(interval);
   }, [gameId]);
-
 
   return (
     <Application

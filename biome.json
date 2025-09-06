@@ -24,9 +24,12 @@
 	},
 	"javascript": {
 		"formatter": {
-			"quoteStyle": "double"
+			"quoteStyle": "double",
+			"indentStyle": "space",
+			"indentWidth": 2
 		}
 	},
+
 	"assist": {
 		"enabled": true,
 		"actions": {

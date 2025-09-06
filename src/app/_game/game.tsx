@@ -8,6 +8,8 @@ import { useCallback, useEffect, useState } from "react";
 import { GridBackground } from "./grid-background";
 import { CELL_SIZE, GRID_SIZE } from "./lib";
 import { Bunnies } from "./bunnies";
+import { useStore } from "zustand";
+import { gameStore } from "./store";
 
 // extend tells @pixi/react what Pixi.js components are available
 extend({
@@ -38,6 +40,8 @@ export function Game() {
     setHoverredCell(cellId);
   }, []);
 
+  const gameId = useStore(gameStore, (s) => s.gameId)
+
   useEffect(() => {
     const interval = window.setInterval(() => {
       setBunnies(generateBunnies());
@@ -45,6 +49,8 @@ export function Game() {
 
     return () => clearInterval(interval);
   }, []);
+
+  console.log({gameId})
 
   return (
     <Application

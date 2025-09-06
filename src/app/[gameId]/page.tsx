@@ -23,7 +23,7 @@ export default async function Home({
 
   return (
     <div className="grid min-w-screen items-center justify-items-center min-h-screen">
-      <Wrapper userId={request.userId} />
+      <Wrapper game={request} />
     </div>
   );
 }

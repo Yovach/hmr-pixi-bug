@@ -1,0 +1,20 @@
+services:
+  website:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      target: dev
+    init: true
+    user: node
+    ports:
+      - "3000:3000"
+    develop:
+      watch:
+        - action: rebuild
+          path: ./pnpm-lock.yaml
+        - action: sync
+          path: .
+          target: /app/
+          ignore:
+            - node_modules/
+            - .next/

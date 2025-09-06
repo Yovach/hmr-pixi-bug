@@ -1,5 +1,5 @@
 import { Graphics } from "pixi.js";
-import { memo, useCallback, useState } from "react";
+import { memo, useCallback } from "react";
 
 interface Props {
   height: number;
